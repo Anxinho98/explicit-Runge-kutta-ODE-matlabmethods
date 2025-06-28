@@ -1,0 +1,16 @@
+function plot_graphs(x,y,fsol)
+    
+    M = length(y(1,:));
+    if (nargin == 3)
+        for k = 1:M                     %plot yn and its solution
+                figure(k);                  %Crea una ventana nueva para que se vean todos los plots al acabar la ejecucuion y no solo el ultimo
+                plot(x,y(:,k),'r.',x,fsol(:,k),'b-');        %Rojo la aproximacion y azul la solucion
+        end
+    else
+        for k = 1:M                     %Pintamos cada yn con su soulcion
+                figure(k);                  %Crea una ventana nueva para que se vean todos los plots al acabar la ejecucuion y no solo el ultimo
+                plot(x,y(:,k),'r.');        %Rojo la aproximacion y azul la solucion
+        end
+    
+    
+end

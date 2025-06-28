@@ -1,30 +1,29 @@
  function escribe_cabecera(fid,x,y,err)
 %
-% Funcion escribe_cabecera(fid,x,y,err)
+% Function escribe_cabecera(fid, x, y, err)
 %
-% Funcion que imprime un encabezado de cara a imprimir 
-% la evolucion de la variable independiente, 
-% de las variables dependientes y del error cometido (opcional) 
-% en los nodos de la discretizacion
-% para el problema de valor inicial
-%   | y'(x) = f(x,y(x))
-%   | y(x=x0) = y_0
-% Se trata de una rutina que se debe llamar antes de escribe_paso.m
+% Function that prints a header for displaying the evolution of the 
+% independent variable, the dependent variables, and the (optional) 
+% error at the discretization nodes for the initial value problem:
+%   | y'(x) = f(x, y(x))
+%   | y(x = x0) = y_0
 %
-% Entrada:
-% fid: identificador de fichero. Para salida por pantalla usar 1.
-%   x: variable independiente en la EDO (no se usa en esta funcion).
-%   y: vector que contiene las variables dependientes (su utilidad se 
-%      limita a conocer el numero de componentes de las que dispone el 
-%      el vector y).
-% err: vector que contiene el error entre la solucion exacta y la 
-%      aproximada (no se usa en esta funcion).
+% This routine should be called before escribe_paso.m
 %
-% Salida: 
-%   Esta rutina tan solo proporciona un encabezado cuyo formato dependera
-%   del numero de componentes en y. La salida es o bien por fichero o por 
-%   pantalla.
-%   
+% Input:
+% fid: file identifier. Use 1 for screen output.
+%   x: independent variable in the ODE (not used in this function).
+%   y: vector containing the dependent variables (only used to 
+%      determine the number of components).
+% err: vector containing the error between the exact and approximate 
+%      solutions (not used in this function).
+%
+% Output:
+%   This routine only produces a header, whose format depends on the 
+%   number of components in y. The output is either to a file or to the 
+%   screen.
+%
+   
 
 n = length(y);
 
